@@ -5,11 +5,11 @@ require_once("include/curl_call.php");
 
 $email=@$_POST['email'];
 $password=@$_POST['pass'];
-// echo $email,$password;
-    // $passs=md5($password);
+echo $email,$password;
+    $passs=md5($password);
     // login by mail
 
-            $url = 'http://34.122.5.95/api/validLogin.php/';
+            $url = 'http://35.232.126.157/api/validLogin.php/';
 
             
             $content = json_encode(array('Email'=>$email,'Password'=>$password),JSON_FORCE_OBJECT);
