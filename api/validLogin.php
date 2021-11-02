@@ -8,7 +8,7 @@
 
     $database=new Database();
     $db=$database->connect();
-
+    // var_dump($db);
     $data = json_decode(file_get_contents("php://input"));
 
     $email = $data->Email;
@@ -18,7 +18,6 @@
         $query = "SELECT \"password\" FROM \"aadmin\" WHERE \"email\"='$email'";
         $result = $db->prepare($query);
         $result->execute();
-
         $noOfRows = $result->rowCount();
         if($noOfRows>0){
             $row = $result->fetch(PDO::FETCH_ASSOC);
