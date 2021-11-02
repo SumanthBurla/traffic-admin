@@ -5,7 +5,7 @@
         header('location:index.php');
     }
     require_once("include/curl.php");
-    @$url = 'https://trafficadmin.herokuapp.com/api/fetchCleared.php/';
+    @$url = 'http://35.232.126.157/api/fetchCleared.php/';
                                
     // function call curlcall($url,$content){  }
     @$response=curlcall($url);
@@ -99,14 +99,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                <? foreach($response as $row){ ?>
+                <?php foreach(@$response as $row){ ?>
                 <tr>
-                    <td><?= $row['sno']; ?></td>
-                    <td><?= $row['name']; ?></td>
-                    <td><?= $row['email']; ?></td>
-                    <td><?= $row['numberplate']; ?></td>
-                    <td><?= $row['contact']; ?></td>
-                    <td><?= $row['status']; ?></td>
+                    <td><?= @$row['sno']; ?></td>
+                    <td><?= @$row['name']; ?></td>
+                    <td><?= @$row['email']; ?></td>
+                    <td><?= @$row['numberplate']; ?></td>
+                    <td><?= @$row['contact']; ?></td>
+                    <td><?= @$row['status']; ?></td>
                 </tr>
                 <?php } ?>
                 </tbody>

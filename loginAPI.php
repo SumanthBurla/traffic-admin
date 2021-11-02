@@ -5,8 +5,8 @@ require_once("include/curl_call.php");
 
 $email=@$_POST['email'];
 $password=@$_POST['pass'];
-echo $email,$password;
-    $passs=md5($password);
+// echo $email,$password;
+//     $passs=md5($password);
     // login by mail
 
             $url = 'http://35.232.126.157/api/validLogin.php/';
@@ -17,7 +17,7 @@ echo $email,$password;
             // function call curlcall($url,$content){  }
             $response=curlcall($url,$content);
 
-            var_dump($response);
+            //var_dump($response);
 
             // $response returns...
             // var_dump($response);

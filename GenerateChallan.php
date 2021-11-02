@@ -7,7 +7,7 @@ require_once("include/curl_call.php");
 
 @$num=@$_POST['number'];
 
-@$url = 'https://trafficadmin.herokuapp.com/api/fetchRow.php/';
+@$url = 'http://35.232.126.157/api/fetchRow.php/';
             
     @$content = json_encode(array('num'=>$num),JSON_FORCE_OBJECT);
            
@@ -110,19 +110,19 @@ require_once("include/curl_call.php");
                     </thead>
                     <tbody>
                         <tr>
-                            <?php if($response['numberplate'] == $num)
+                            <?php if(@$response['numberplate'] == $num)
                             {   ?>
-                                <td><?= $response['sno']; ?></td>
-                                <td><?= $response['name']; ?></td>
-                                <td><?= $response['email']; ?></td>
-                                <td><?= $response['numberplate']; ?></td>
-                                <td><?= $response['contact']; ?></td>
-                                <td><?= $response['status']; ?></td>
+                                <td><?= @$response['sno']; ?></td>
+                                <td><?= @$response['name']; ?></td>
+                                <td><?= @$response['email']; ?></td>
+                                <td><?= @$response['numberplate']; ?></td>
+                                <td><?= @$response['contact']; ?></td>
+                                <td><?= @$response['status']; ?></td>
                         </tr>
                         <?php } 
-                            if($response['message'] == 'Number plate does not exists')
+                            if(@$response['message'] == 'Number plate does not exists')
                             {
-                            header('location:GenerateChallan.php?error=Number plate does not exists');
+                            @header('location:GenerateChallan.php?error=Number plate does not exists');
                             die();
                             }   
                         ?>
