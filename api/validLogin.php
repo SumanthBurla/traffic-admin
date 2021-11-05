@@ -8,7 +8,7 @@
 
     $database=new Database();
     $db=$database->connect();
-    // var_dump($db);
+    var_dump($db);
     $data = json_decode(file_get_contents("php://input"));
 
     $email = $data->Email;
