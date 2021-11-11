@@ -51,7 +51,7 @@ def gmail():
     s.starttls() 
     
     # Authentication 
-    s.login(fromaddr, "givemypostt") 
+    s.login(fromaddr, "givemypost") 
     
     # Converts the Multipart msg into a string 
     text = msg.as_string() 
