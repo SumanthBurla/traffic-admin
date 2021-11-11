@@ -21,14 +21,14 @@ def gmail():
     msg['Subject'] = "Traffic violation"
     
     # string to store the body of the mail 
-    body = "Please find the attachment for the code and datasets followed by challans of traffic violation system."
+    body = "Dear citizen \n\n\nThis is auto-generated mail from traffic police to inform you that, you have voilated a traffic rule recently. \n Please find the attachment and link to pay the challan as soon as possible. \n\n\nThanks,\n TSgov."
     
     # attach the body with the msg instance 
     msg.attach(MIMEText(body, 'plain')) 
     
     # open the file to be sent 
-    filename = "face.jpg"
-    attachment = open(r"detect\face.jpg", "rb") 
+    filename = "dxc_symbol_blk_rgb_150.png"
+    attachment = open(r"dxc_symbol_blk_rgb_150.png", "rb") 
     
     # instance of MIMEBase and named as p 
     p = MIMEBase('application', 'octet-stream') 
@@ -51,7 +51,7 @@ def gmail():
     s.starttls() 
     
     # Authentication 
-    s.login(fromaddr, "givemypost") 
+    s.login(fromaddr, "givemypostt") 
     
     # Converts the Multipart msg into a string 
     text = msg.as_string() 
